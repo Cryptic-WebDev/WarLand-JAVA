@@ -6,8 +6,10 @@ public class Character {
 	private String kind; //Especie del personaje
 	private int level; //Nivel del personaje (del 1 al 100)
 	private String genre; //Genero del personaje (masculino, femenino, hermafrodita, nulo)
-	private int lifePoints; //Vida del personaje
-	private int magicPoints; //Puntos mágicos del personaje
+	private int actualLifePoints; //Vida ACTUAL del personaje
+	private int totalLifePoints; //Vida TOTAL del personaje
+	private int actualMagicPoints; //Puntos mágicos ACTUALES del personaje
+	private int totalMagicPoints; //Puntos mágicos TOTALES del personaje
 	private long expPoints; //Puntos de experiencia
 	private int agility; //Velocidad del personaje, indica si ataca antes o despues, si dobla al enemigo ataca 2 veces por turno
 	private int strength; //Fuerza física, indica el poder del ataque melee
@@ -15,19 +17,57 @@ public class Character {
 	private int resistance; //Defensa física, indica la resistencia a ataques melee
 	private int protection; //Defensa mágica, indica la resitenca a ataques mágicos
 	
+	//Constructor de Personajes (recibe nombre, especie y genero)
 	public Character(String name, String kind, String genre) {
-		this.name = name;
-		this.kind =  kind;
-		level = 1;
-		this.genre = genre;
-		lifePoints = 20;
-		magicPoints = 5;
-		expPoints = 0;
-		agility = 5;
-		strength = 5;
-		wisdom = 5;
-		resistance = 5;
+		this.name = name; //Nombre pasado por args
+		this.kind =  kind; //Especie pasada por args
+		level = 1; //Empieza nivel 1
+		this.genre = genre; //Genero pasado por args
 		
+		totalLifePoints = 20; //Empieza con 20 LP
+		actualLifePoints = totalLifePoints;
+		
+		totalMagicPoints = 5; //Empieza con 5 MP
+		actualMagicPoints = totalMagicPoints; 
+		
+		expPoints = 0; //Empieza con 0 EXP
+		agility = 5; //Empieza con 5 agilidad
+		strength = 5; //Empieza con 5 fuerza
+		wisdom = 5; //Empieza con 5 sabiduria
+		resistance = 5; //Empieza con 5 resistencia
+		protection = 5; //Empiezac on 5 proteccion
 	}
 	
+	//GETTERS para acceder a los atributos
+	public String getName() {
+		return name;
+	}
+	
+	public String getKind() {
+		return kind;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public String getGenre() {
+		return genre;
+	}
+	
+	public int getTotalLifePoints() {
+		return totalLifePoints;
+	}
+	
+	public int getActualLifePoints() {
+		return actualLifePoints;
+	}
+	
+	public int getTotalMagicPoints() {
+		return totalMagicPoints;
+	}
+	
+	public int getActualMagicPoints() {
+		return actualMagicPoints;
+	}
 }
