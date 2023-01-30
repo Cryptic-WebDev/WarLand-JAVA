@@ -70,4 +70,42 @@ public class Character {
 	public int getActualMagicPoints() {
 		return actualMagicPoints;
 	}
+	
+	public long getExpPoints() {
+		return expPoints;
+	}
+	
+	public int getAgility() {
+		return agility;
+	}
+	
+	public int getStrength() {
+		return strength;
+	}
+	
+	public int getWisdom() {
+		return wisdom;
+	}
+	
+	public int getResistance() {
+		return resistance;
+	}
+	
+	public int getProtection() {
+		return protection;
+	}
+	
+	//SETTERS para modificar los atributos
+	public void levelUp(int increment) {
+		level += increment;
+	}
+	
+	public void damage(int points) {
+		actualLifePoints -= points;
+	}
+	
+	public void downMagic(int points) {
+		actualMagicPoints -= points;
+	}
+	
 }
