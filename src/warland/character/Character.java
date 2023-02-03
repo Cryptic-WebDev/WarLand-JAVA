@@ -1,9 +1,12 @@
 package warland.character;
 
+import warland.score.Stat;
+
+//Clase que define los personajes de Warland
 public class Character {
 	//ATRIBUTOS DE PERSONAJE
 	private String name; //Nombre del personaje
-	private String kind; //Especie del personaje
+	private Kind kind; //Especie del personaje
 	private int level; //Nivel del personaje (del 1 al 100)
 	private String genre; //Genero del personaje (masculino, femenino, hermafrodita, nulo)
 	private int actualLifePoints; //Vida ACTUAL del personaje
@@ -11,14 +14,19 @@ public class Character {
 	private int actualMagicPoints; //Puntos mágicos ACTUALES del personaje
 	private int totalMagicPoints; //Puntos mágicos TOTALES del personaje
 	private long expPoints; //Puntos de experiencia
+	private Stat[] baseStats;
+	
+	//private Armor[] armor;
+	/*
 	private int agility; //Velocidad del personaje, indica si ataca antes o despues, si dobla al enemigo ataca 2 veces por turno
 	private int strength; //Fuerza física, indica el poder del ataque melee
 	private int wisdom; //Poder mágico, indica el poder del ataque mágico
 	private int resistance; //Defensa física, indica la resistencia a ataques melee
 	private int protection; //Defensa mágica, indica la resitenca a ataques mágicos
+	*/
 	
 	//Constructor de Personajes (recibe nombre, especie y genero)
-	public Character(String name, String kind, String genre) {
+	public Character(String name, Kind kind, String genre) {
 		this.name = name; //Nombre pasado por args
 		this.kind =  kind; //Especie pasada por args
 		level = 1; //Empieza nivel 1
@@ -31,11 +39,13 @@ public class Character {
 		actualMagicPoints = totalMagicPoints; 
 		
 		expPoints = 0; //Empieza con 0 EXP
+		/*
 		agility = 5; //Empieza con 5 agilidad
 		strength = 5; //Empieza con 5 fuerza
 		wisdom = 5; //Empieza con 5 sabiduria
 		resistance = 5; //Empieza con 5 resistencia
-		protection = 5; //Empiezac on 5 proteccion
+		protection = 5; //Empieza con 5 proteccion
+		*/
 	}
 	
 	//GETTERS para acceder a los atributos
@@ -45,7 +55,7 @@ public class Character {
 	}
 	
 	//Obtener especie
-	public String getKind() {
+	public Object getKind() {
 		return kind;
 	}
 	
@@ -84,6 +94,7 @@ public class Character {
 		return expPoints;
 	}
 	
+	/*
 	//Obtener los puntos de agilidad
 	public int getAgility() {
 		return agility;
@@ -108,6 +119,7 @@ public class Character {
 	public int getProtection() {
 		return protection;
 	}
+	*/
 	
 	//SETTERS para modificar los atributos
 	//Incrementar nivel
@@ -161,6 +173,7 @@ public class Character {
 		}
 	}
 	
+	/*
 	//Aumenta los puntos de agilidad
 	public void setAgility(int increment) {
 		agility += increment;
@@ -185,7 +198,7 @@ public class Character {
 	public void setProtection(int increment) {
 		protection += increment;
 	}
-	
+	*/
 	
 	
 }
